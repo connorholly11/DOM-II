@@ -16,22 +16,57 @@ logo.addEventListener('click', function(e) {
     console.log("You clicked me!")
 })
 
-const mouseover = document.querySelector('.home .intro h2');
-mouseover.addEventListener('mouseover', function(e){
+// const keydown = document.querySelector('.home .intro h2');
+// keydown.addEventListener('keydown', function(e){
+//     e.target.style.backgroundColor = "blue";
+// });
+
+
+
+const mousehover = document.querySelector('.home .intro p');
+mousehover.addEventListener('mouseover', function(e){
     document.body.style.backgroundColor = "red";
 })
 
-//got to work on this
-const drag = document.querySelector('.home .intro img');
-drag.addEventListener('drag', function(e){
-    event.dataTransfer.setData("img", event.target.id);
+mousehover.addEventListener('mouseleave', function(e){
+    document.body.style.backgroundColor = "white";
 })
 
-//got to work on this
-const dblclick = document.querySelectorAll('.container .content-section .img-content')[0];
-dblclick.addEventListener('dbleclick', function(e){
-    document.body.style.backgroundColor = "blue";
+
+const wheel = document.querySelector('.home .intro h2');
+wheel.addEventListener('wheel', function(e){
+    e.target.fontSize="50px";
 });
 
 
-// const select = document.querySelector()
+const resize = document.querySelector('.home .intro img');
+window.addEventListener('resize', function(e){
+    TweenMax.to(e.target, 1, {scale: 1.5})
+});
+
+
+//got to work on this
+// const drag = document.querySelector('.home .intro img');
+// drag.addEventListener('drag', function(e){
+//     event.dataTransfer.setData("img", event.target.id);
+//     document.querySelector('.home .intro img').innerHTML = "dragging the image";
+// })
+
+//got to work on this
+
+const navbar = document.querySelectorAll('.nav .nav-link');
+navbar.forEach(anchor => {
+    anchor.addEventListener('dblclick', function(e) {
+    anchor.style.color = "blue";
+})
+});
+
+
+
+
+// const select = document.querySelectorAll('.home .content-pick .destination p')[0];
+// select.addEventListener('select', function(e){
+//     console.log("p tag has been selected")
+// })
+
+ 
