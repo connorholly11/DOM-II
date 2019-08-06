@@ -14,13 +14,12 @@
 const logo = document.querySelector('.logo-heading');
 logo.addEventListener('click', function(e) {
     console.log("You clicked me!")
-})
+});
 
-// const keydown = document.querySelector('.home .intro h2');
-// keydown.addEventListener('keydown', function(e){
-//     e.target.style.backgroundColor = "blue";
-// });
-
+const keydown = document.querySelector('body');
+keydown.addEventListener('keydown', function(e){
+    console.log(`${e.code} was pressed `)
+});
 
 
 const mousehover = document.querySelector('.home .intro p');
@@ -30,7 +29,7 @@ mousehover.addEventListener('mouseover', function(e){
 
 mousehover.addEventListener('mouseleave', function(e){
     document.body.style.backgroundColor = "white";
-})
+});
 
 
 const wheel = document.querySelector('.home .intro h2');
