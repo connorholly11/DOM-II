@@ -38,10 +38,10 @@ wheel.addEventListener('wheel', function(e){
 });
 
 
-const resize = document.querySelector('.home .intro img');
-window.addEventListener('resize', function(e){
-    TweenMax.to(e.target, 1, {scale: 1.5})
-});
+// const resize = document.querySelector('.home .intro img');
+// window.addEventListener('resize', function(e){
+//     TweenMax.to(e.target, 1, {scale: 1.5})
+// });
 
 
 //got to work on this
@@ -67,5 +67,24 @@ navbar.forEach(anchor => {
 // select.addEventListener('select', function(e){
 //     console.log("p tag has been selected")
 // })
+
+const contextMenu = document.querySelector('.footer p');
+contextMenu.addEventListener('contextMenu', function(e){
+    contextMe.target.style.color = "green";
+});
+
+const focus = document.querySelector('.nav .nav-link');
+focus.addEventListener('focus', function(e){
+    e.target.style.color = "red";
+});
+
+
+// const scroll = document.querySelector('body');
+// scroll.addEventListener('scroll', function(e){
+//     document.body.style.backgroundColor = "green";
+// });
+
+
+
 
  
