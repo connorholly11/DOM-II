@@ -21,6 +21,11 @@ keydown.addEventListener('keydown', function(e){
     console.log(`${e.code} was pressed `)
 });
 
+const keyup = document.querySelector('body');
+keyup.addEventListener('keyup', function(e){
+    console.log(`${e.code} was pressed `)
+});
+
 
 const mousehover = document.querySelector('.home .intro p');
 mousehover.addEventListener('mouseover', function(e){
@@ -62,15 +67,33 @@ navbar.forEach(anchor => {
 
 
 
+// function logSelection(event) {
+//     const log = document.getElementById('log');
+//     const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//     log.textContent = `You selected: ${selection}`;
+//   }
 
-// const select = document.querySelectorAll('.home .content-pick .destination p')[0];
+// const input = document.querySelector('input');
+// input.addEventListener('select', logSelection);
+
+
+function logSelection(event) {
+    const log = document.getElementById('log');
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    console.log(`You selected: ${selection}`);
+  }
+  const input = document.querySelector('input');
+  input.addEventListener('select', logSelection);
+
+
+// const select = document.querySelector('#log');
 // select.addEventListener('select', function(e){
-//     console.log("p tag has been selected")
-// })
+//     console.log(`${e.target} has been selected`);
+// });
 
-const contextMenu = document.querySelector('.footer p');
-contextMenu.addEventListener('contextMenu', function(e){
-    contextMe.target.style.color = "green";
+const contextMenu = document.querySelector('.footer');
+contextMenu.addEventListener('contextmenu', function(e){
+    e.target.style.backgroundColor = "green";
 });
 
 const focus = document.querySelector('.nav .nav-link');
@@ -83,6 +106,52 @@ focus.addEventListener('focus', function(e){
 // scroll.addEventListener('scroll', function(e){
 //     document.body.style.backgroundColor = "green";
 // });
+
+
+
+const signupBtns = document.querySelector('.btn')
+signupBtns.addEventListener('click', function(e){
+    console.log("Button has been clicked")
+    event.preventDefault();
+});
+
+
+
+
+// const resize = document.querySelector('body')
+// window.addEventListener('resize', function(e){
+//     window.innerHeight
+// })
+
+// allParagraphs.forEach(node =>{
+//     node.addEventListener('copy', function(event){
+//         alert("You are copying a paragraph!");
+//     })
+//     this.style.color = 'red';
+// })
+
+// alert when copied any child of intro. Also, use event.stopPropagation()
+
+intro = document.querySelector('.intro');
+intro.addEventListener('copy', function(event){
+    event.stopPropagation();
+    alert('You also copied intro');
+    alert('You copied Intro');
+})
+
+//  if event.stopPropagation() is not added on this block, when copying the paragraph
+//  on the 'Welcome to the Fun Bus' section, two alerts will pop up
+//  event.stopPropagation() prevents this from happening, so only the paragraph alert will pop up
+
+// allParagraphs.forEach(node =>{
+//     node.addEventListener('copy', function(event){
+//         event.stopPropagation();
+//         alert("You are copying a paragraph!");
+//     })
+// })
+
+
+
 
 
 
