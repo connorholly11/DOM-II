@@ -125,7 +125,7 @@ signupBtns.addEventListener('click', function(e){
 
 
 
-const destH4 = document.querySelectorAll('.destination h4')[0];
+const destH4 = document.querySelectorAll('.destination')[0];
 destH4.addEventListener('mouseover', function(e) {
     e.target.style.backgroundColor = "blue";
 });
