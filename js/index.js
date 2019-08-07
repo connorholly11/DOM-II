@@ -123,34 +123,20 @@ signupBtns.addEventListener('click', function(e){
 //     window.innerHeight
 // })
 
-// allParagraphs.forEach(node =>{
-//     node.addEventListener('copy', function(event){
-//         alert("You are copying a paragraph!");
-//     })
-//     this.style.color = 'red';
-// })
-
-// alert when copied any child of intro. Also, use event.stopPropagation()
-
-intro = document.querySelector('.intro');
-intro.addEventListener('copy', function(event){
-    event.stopPropagation();
-    alert('You also copied intro');
-    alert('You copied Intro');
-})
-
-//  if event.stopPropagation() is not added on this block, when copying the paragraph
-//  on the 'Welcome to the Fun Bus' section, two alerts will pop up
-//  event.stopPropagation() prevents this from happening, so only the paragraph alert will pop up
-
-// allParagraphs.forEach(node =>{
-//     node.addEventListener('copy', function(event){
-//         event.stopPropagation();
-//         alert("You are copying a paragraph!");
-//     })
-// })
 
 
+const destH4 = document.querySelectorAll('.destination h4')[0];
+destH4.addEventListener('mouseover', function(e) {
+    e.target.style.backgroundColor = "blue";
+});
+
+const destButton = document.querySelector('.destination p');
+destButton.addEventListener('mouseover', function(e) {
+    e.stopPropagation();
+    e.target.style.backgroundColor = "red";
+});
+
+//click event on button, click event on h4, propogate the h4
 
 
 
